@@ -38,7 +38,7 @@ $CXX $CXXFLAGS -DNDEBUG png_proto_fuzzer_example.cc libpng_read_fuzzer.o genfile
   LPM/src/libfuzzer/libprotobuf-mutator-libfuzzer.a \
   LPM/src/libprotobuf-mutator.a \
   LPM/external.protobuf/lib/lib*.a \
-  libpng/.libs/libpng16.a \
+  libpng/.libs/libpng14.a \
   $LIB_FUZZING_ENGINE \
   -o $OUT/png_proto_fuzzer_example
 
@@ -49,7 +49,7 @@ $CXX $CXXFLAGS -DNDEBUG png_proto_fuzzer_example.cc png_proto_mutator.cc libpng_
   LPM/src/libfuzzer/libprotobuf-mutator-libfuzzer.a \
   LPM/src/libprotobuf-mutator.a \
   LPM/external.protobuf/lib/lib*.a \
-  libpng/.libs/libpng16.a \
+  libpng/.libs/libpng14.a \
   $LIB_FUZZING_ENGINE \
   -o $OUT/png_proto_fuzzer_example_custom_mutator
 
@@ -62,7 +62,7 @@ $CXX $CXXFLAGS dummy.cc \
    -D PNG_MUTATOR_DEFINE_LIBFUZZER_CUSTOM_MUTATOR \
    libpng_read_fuzzer.o \
   -lz \
-  libpng/.libs/libpng16.a \
+  libpng/.libs/libpng14.a \
   $LIB_FUZZING_ENGINE \
   -o $OUT/png_custom_mutator_fuzzer_example
 
@@ -72,6 +72,6 @@ $CXX $CXXFLAGS libpng_transforms_fuzzer.cc \
    -D PNG_MUTATOR_DEFINE_LIBFUZZER_CUSTOM_MUTATOR \
    -I libpng \
   -lz \
-  libpng/.libs/libpng16.a \
+  libpng/.libs/libpng14.a \
   $LIB_FUZZING_ENGINE \
   -o $OUT/png_transforms_fuzzer
